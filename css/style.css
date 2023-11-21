@@ -1,6 +1,6 @@
 
 body {
-    font-family: "Marker Felt", sans-serif;
+    font-family: "Abel";
     font-size: 16px;
     margin: 0;
     padding: 0;
@@ -13,6 +13,7 @@ body {
     color: #fff;
     text-align: center;
     padding: 10px 0;
+    font-size: 1.5rem;
   }
   
   nav ul {
@@ -41,7 +42,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #644117;
+    background-image: url('/images/brownheader.jpg');
+    background-color: #644117; 
+    background-size: cover; 
+    background-position: center; 
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -51,13 +55,16 @@ body {
   /* Main Content Styles */
   main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 768px));
+    text-align: center;
     gap: 20px;
     padding: 20px;
   }
 
   .ps {
-    grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
   /* Skip to Main Content Link */
   #skip {
@@ -65,11 +72,16 @@ body {
     top: 0;
     left: 0;
     background-color: #333;
-    color: #fff;
+    color: #333;
     text-decoration: none;
     padding: 10px 10px;
-    text-align: center;
+    text-align: center; 
+    
   }
+  #skip:focus{
+    color: #fff;
+  }
+  
   button {
     position: absolute;
     top: 0;
@@ -79,7 +91,8 @@ body {
     text-decoration: none;
     padding: 10px 10px;
     text-align: center;
-    width: 150px;
+    width: 10px;
+    display: none;
   }
   
   /* Navigation Highlight */
@@ -109,54 +122,91 @@ body {
 }
 img {
   border-radius: 10px;
+  max-width: 100%;
 }
 p{
   display: list-item;
 }
-
+img:hover{
+  transform: scale(1.1);
+}
 div {
   margin: 20px auto; 
   width: 90%;
   border-bottom: 1px solid black;
   padding-bottom: 20px; 
 }
-@media (min-width: 769px) {
-  .lightbox {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    text-align: center;
+ul {
+  list-style-type: none; 
+  padding: 0;
+}
+li {
+  margin: 5px 0; 
+}
+h2 {
+  font-size: 1.5rem;
+  transition: transform 1s ease;
+}
+h3 {
+  font-size: 1.3rem;
+}
+
+h2:hover{
+  transform: scale(1.2);
+}
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
 }
 
 /* Close button styles */
 .close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    color: #fff;
-    font-size: 30px;
-    cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
 }
 
 /* Lightbox image styles */
 .lightbox-content {
-    margin: 20px auto;
-    display: block;
-    max-width: 80%;
-    max-height: 80%;
+  margin: 20px auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
 }
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 769px) {
+  
 .night-mode {
   background-color: #333; /* Dark background color */
   color: #fff; /* Light text color */
   /* Additional styling for night mode */
 }
+button {
+  width: 150px;
+}
 .night-mode header {
   background-color: #333;
+  background-image: none;
 }
 /* You can add more specific styles to elements for night mode as needed */
 .night-mode h1 {
@@ -165,63 +215,152 @@ div {
 .night-mode #scroll-to-top{
   color: #fff;
 }
+
+button {
+  display: block;
 }
-  /* Mobile Devices */
-  @media (max-width: 768px) {
-    main {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 768px));
-      text-align: center;
-    }
-    button {
-      display: none;
-    }
-    #skip {
-      display: none;
-    }
-    div {
-      margin: 20px auto; 
-      width: 90%;
-      border-bottom: 1px solid black;
-      padding-bottom: 20px; 
-    }
+body {
+  font-family: "Abel";
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: tan;
+}
+/* Navigation Bar */
+nav {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url('/images/brownheader.jpg');
+  /* background-color: #644117; */
+  background-size: cover; 
+  background-position: center; 
+  color: #fff;
+  text-align: center;
+  padding: 20px;
   
-    h2 {
-      font-size: 1.5rem;
-    }
+}
+
+/* Main Content Styles */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.ps {
+  grid-column: 2;
+}
+/* Skip to Main Content Link */
+#skip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  color: #333;
+  text-decoration: none;
+  padding: 10px 10px;
+  text-align: center; 
+  
+}
+#skip:focus{
+  color: #fff;
+}
+
+button {
+  position: absolute;
+  top: 0;
+  left: 90%;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 10px;
+  text-align: center;
+  width: 150px;
+}
+
+/* Navigation Highlight */
+#links li a {
+  padding: 10px;
+}
+
+#links li a:hover {
+  background-color: #644117;
+  transition: background-color 0.5s ease;
+  color: #fff;
+}
+#links li a.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+.header-image {
+max-height: 100px; /* Adjust the height as needed */
+}
+
+.left-image {
+margin-right: 20px;
+}
+
+.right-image {
+margin-left: 20px;
+}
+img {
+border-radius: 10px;
+}
+p{
+display: list-item;
+}
+img:hover{
+transform: scale(1.1);
+}
+div {
+margin: 20px auto; 
+width: 90%;
+border-bottom: 1px solid black;
+padding-bottom: 20px; 
+}
+
+}
+  
+
+  @media (min-width: 900px) {
     
-    img {
-      max-width: 100%; 
-    }
-  
-    .ps {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-  
-    h3 {
-      font-size: 1.3rem;
-    }
-  
-    ul {
-      list-style-type: none; 
-      padding: 0;
-    }
-  
-    li {
-      margin: 5px 0; 
-    }
-    nav{
-      font-size: 1.5rem;
-    }
+      main {
+        grid-template-columns: repeat(3, 1fr);
+      }
     
-  }
-  h2{
-    transition: transform 1s ease;
-  }
-  h2:hover{
-    transform: scale(1.2);
-  }
+  } 
   
   
   /* Apply a slight backdrop to all images */
